@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TareasApp.Application/TareasApp.Application.csproj" />
+  <Project Path="TareasApp.Domain/TareasApp.Domain.csproj" />
+  <Project Path="TareasApp.Infrastructure/TareasApp.Infrastructure.csproj" />
+  <Project Path="TareasApp.Web/TareasApp.Web.csproj" />
+</Solution>

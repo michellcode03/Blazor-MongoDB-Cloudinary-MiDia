@@ -1,0 +1,15 @@
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\bin\Debug\net10.0\TareasApp.Infrastructure.deps.json
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\bin\Debug\net10.0\TareasApp.Infrastructure.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\bin\Debug\net10.0\TareasApp.Infrastructure.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\bin\Debug\net10.0\TareasApp.Domain.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\bin\Debug\net10.0\TareasApp.Domain.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.AssemblyInfo.cs
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasAp.B8A06886.Up2Date
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\refint\TareasApp.Infrastructure.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\ref\TareasApp.Infrastructure.dll

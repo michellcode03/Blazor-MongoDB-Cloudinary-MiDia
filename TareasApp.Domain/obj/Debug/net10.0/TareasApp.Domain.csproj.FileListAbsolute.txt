@@ -1,0 +1,11 @@
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\bin\Debug\net10.0\TareasApp.Domain.deps.json
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\bin\Debug\net10.0\TareasApp.Domain.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\bin\Debug\net10.0\TareasApp.Domain.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.AssemblyInfoInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.AssemblyInfo.cs
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\refint\TareasApp.Domain.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\TareasApp.Domain.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Domain\obj\Debug\net10.0\ref\TareasApp.Domain.dll

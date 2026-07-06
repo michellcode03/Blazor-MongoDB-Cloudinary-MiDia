@@ -1,0 +1,17 @@
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Application.deps.json
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Application.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Application.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Domain.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Domain.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.csproj.AssemblyReference.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.AssemblyInfoInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.AssemblyInfo.cs
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasAp.30E1BF33.Up2Date
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\refint\TareasApp.Application.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\TareasApp.Application.pdb
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\obj\Debug\net10.0\ref\TareasApp.Application.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Infrastructure.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Application\bin\Debug\net10.0\TareasApp.Infrastructure.pdb

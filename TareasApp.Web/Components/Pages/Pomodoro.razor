@@ -1,0 +1,93 @@
+@page "/pomodoro"
+@rendermode InteractiveServer
+
+<div class="container-fluid p-4 bg-light min-vh-100">
+    <div class="row">
+        <div class="col-12 text-center">
+            
+            <div class="mb-5">
+                <h1 class="display-5 fw-bold">Momento de enfoque</h1>
+                <p class="text-secondary fs-5">Respira profundo y comienza tu sesión de calma.</p>
+            </div>
+
+            <div class="card border-0 shadow-sm p-5 rounded-4 w-100">
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="position-relative">
+                        <div class="rounded-circle border border-primary border-5 d-flex align-items-center justify-content-center" 
+                             style="width: 300px; height: 300px;">
+                            <div class="text-center">
+                                <h2 class="display-2 fw-bold text-primary mb-0">@TiempoInicio : @TiempoSegundos.ToString("D2")</h2>
+                                <span class="text-uppercase text-muted small tracking-widest">minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center gap-4">
+                    <button class="btn btn-outline-primary rounded-circle p-3" @onclick="() => aumentarTiempo()">+</button>
+
+                    <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow" 
+                            @onclick="EstadoCorriendo ? pausarTemporalizador : iniciarTemporalizador">
+                        @(EstadoCorriendo ? "Pausar" : "Iniciar")
+                    </button>
+
+                    <button class="btn btn-outline-primary rounded-circle p-3" @onclick="() => disminuirTiempo()">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private int TiempoInicio = 25;
+    private int TiempoSegundos = 00;
+    private bool EstadoCorriendo = false;
+    private Timer? time;
+
+    public void iniciarTemporalizador()
+    {
+        if(EstadoCorriendo)
+            return;
+
+        EstadoCorriendo = true;
+
+        time = new Timer(actualizarTiempo, null, 0, 1000);
+    }
+
+    //"Hola actualizarTiempo, te mando un dato (state)"
+    public void actualizarTiempo(object? state){
+        if(TiempoSegundos > 0)
+        {
+            TiempoSegundos--;
+        }
+        else if(TiempoSegundos == 0)
+        {
+            TiempoInicio--;
+            TiempoSegundos = 59;
+        }
+
+        if(TiempoInicio == 0 && TiempoSegundos == 0)
+        {
+            EstadoCorriendo = false;
+            time?.Dispose();
+        }
+
+        InvokeAsync(StateHasChanged);
+        //StateHasChanged le dice a Blazor "algo cambió, vuelve a pintar el componente". 
+        //Sin esa línea, las variables cambian en memoria pero la pantalla nunca se entera.
+    }
+
+    public void pausarTemporalizador(){
+        EstadoCorriendo = false;
+        time?.Dispose();
+    }
+
+    public void aumentarTiempo(){
+        TiempoInicio++;
+    }
+
+    public void disminuirTiempo(){
+        TiempoInicio--;
+    }
+    
+}

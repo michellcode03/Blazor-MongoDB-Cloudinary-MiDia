@@ -1,0 +1,187 @@
+@page "/"
+@page "/agenda"
+@rendermode InteractiveServer
+@using TareasApp.Application.Services
+@using TareasApp.Domain;
+@inject TareaService TareaService
+
+<div class="container-fluid px-4 py-5" style="max-width: 900px;">
+    <header class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h1 class="fw-bold text-dark display-6 mb-1">Mi Agenda</h1>
+            <p class="text-muted fs-5">Respira, un paso a la vez.</p>
+        </div>
+        <button class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm" @onclick="() => mostrarModal = true">
+            <i class="bi bi-plus-lg me-2"></i>Nueva Tarea
+        </button>
+    </header>
+
+    <div class="d-flex gap-3 mb-5 ">
+    @foreach (var dia in diasSemana)
+    {
+        <div class="p-3 rounded-4 shadow text-center @(dia.Date == fechaSeleccionada.Date ? "bg-primary text-white" : "bg-white border")"
+             style="width: 75px; cursor: pointer;"
+             @onclick="async () => { fechaSeleccionada = dia; tareas = await TareaService.ObtenerTareas(dia); }">
+            <div class="small">@dia.ToString("ddd", new System.Globalization.CultureInfo("es-ES")).ToUpper()</div>
+            <div class="fs-4 fw-bold">@dia.Day</div>
+        </div>
+    }
+</div>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-secondary">Tareas de hoy</h5>
+        <span class="badge bg-light text-primary border border-primary px-3 py-2 rounded-pill">4 Pendientes</span>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4 mb-3">
+        <div class="card border-0 shadow-sm rounded-4 mb-3">
+    @foreach(var tarea in tareas)
+    {
+        <div class="card-body p-4 d-flex align-items-center @(tarea.Completada ? "opacity-50" : "")">
+            <input class="form-check-input me-4" type="checkbox" checked="@tarea.Completada"
+            style="width: 1.8rem; height: 1.8rem; cursor: pointer;" @onchange="async (e) => await CambiarMarcador(tarea, (bool)e.Value!)" />
+            <div class="flex-grow-1">
+                <div class="fw-bold text-dark fs-5">@tarea.Titulo</div>
+                <div class="text-muted"><i class="bi bi-clock me-1"></i> @tarea.Minutos min</div>
+            </div>
+            <span class="badge bg-light text-primary fw-normal">@tarea.Categoria</span>
+        </div>
+    }
+</div>
+    </div>
+
+</div>
+
+@if (mostrarModal)
+{
+    <div class="modal d-block" style="background-color: rgba(0,0,0,.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+
+                <div class="modal-header border-0 p-4">
+                    <h5 class="modal-title fw-bold">Nueva Tarea</h5>
+                    <button class="btn-close"
+                            @onclick="() => mostrarModal = false"></button>
+                </div>
+
+                <div class="modal-body px-4 pb-4">
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            Nombre de la tarea
+                        </label>
+                        <input type="text"
+                               class="form-control rounded-3"
+                               @bind="NombreTarea"
+                               placeholder="Ej: Estudiar C#" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            Tipo de tarea
+                        </label>
+                        <select class="form-select rounded-3" @bind="TipoTarea">
+                            <option selected disabled>
+                                Selecciona un tipo
+                            </option>
+                            <option>Trabajo</option>
+                            <option>Estudio</option>
+                            <option>Personal</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            Tiempo de enfoque (minutos)
+                        </label>
+                        <input type="number"
+                               @bind="TiempoEnfoque"
+                               class="form-control rounded-3"
+                               placeholder="25, 45, 60, 90..." />
+                    </div>
+
+                </div>
+
+                <div class="modal-footer border-0 p-4 pt-0">
+                    <button class="btn btn-light rounded-pill px-4"
+                            @onclick="() => mostrarModal = false">
+                        Cancelar
+                    </button>
+
+                    <button class="btn btn-primary rounded-pill px-4"
+                    @onclick="GuardarTarea">
+                        Guardar Tarea
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+    private bool mostrarModal = false;
+    private bool completada = false;
+    private string NombreTarea = string.Empty;
+    private string TipoTarea = string.Empty;
+    private int TiempoEnfoque = 25;
+
+    private DateTime fechaSeleccionada = DateTime.Today;
+
+    //Lista de días de la semana, comenzando desde el lunes hasta el domingo
+    private List<DateTime> diasSemana => ObtenerDiasSemana();
+    private DateTime hoy = DateTime.Today;//dia actual
+    private List<Tareas> tareas = new List<Tareas>();
+    private Tareas nuevaTarea = new Tareas();
+
+    private List<DateTime> ObtenerDiasSemana()
+    {
+        var diaSemana = (int)hoy.DayOfWeek; //dia de la semana (0=domingo, 1=lunes, ..., 6=sábado)
+        // En C# domingo=0, lunes=1... ajustamos para que lunes sea el inicio
+        var diasDesdeElLunes = diaSemana == 0 ? 6 : diaSemana - 1;
+        var lunes = hoy.AddDays(-diasDesdeElLunes);
+        return Enumerable.Range(0, 7).Select(i => lunes.AddDays(i)).ToList();
+    }
+
+    public async Task GuardarTarea()
+    {
+        try{
+            nuevaTarea.Titulo = NombreTarea;
+            nuevaTarea.Categoria = TipoTarea;
+            nuevaTarea.Minutos = TiempoEnfoque;
+            nuevaTarea.Fecha = DateTime.UtcNow;
+            nuevaTarea.Completada = false;
+            nuevaTarea.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
+            await TareaService.ValidarTarea(nuevaTarea);
+            Console.WriteLine("Tarea guardada correctamente");
+            mostrarModal = false;
+            tareas = await TareaService.ObtenerTareas(fechaSeleccionada);
+        }catch(Exception ex)
+        {
+            Console.WriteLine($"Error al guardar la tarea: {ex.Message}");
+        }
+    }
+
+    public async Task CambiarMarcador(Tareas tarea, bool valor)
+    {
+        try
+        {
+            await TareaService.ActualizarTarea(tarea.Id!, valor);
+            tarea.Completada = valor;
+            tareas = await TareaService.ObtenerTareas(fechaSeleccionada);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al actualizar la tarea: {ex.Message}");
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        tareas = await TareaService.ObtenerTareas(fechaSeleccionada);
+    }
+
+
+}
