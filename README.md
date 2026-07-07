@@ -39,6 +39,7 @@ El proyecto está desarrollado siguiendo los principios de **Clean Architecture*
 Esta arquitectura permite mantener una clara separación de responsabilidades, facilitando el mantenimiento, la escalabilidad y las pruebas del sistema.
 
 ## Capturas
+
 ![Pagina](assets/imagen12.png)
 ![Pagina](assets/imagen13.png)
 ![Pagina](assets/imagen14.png)
