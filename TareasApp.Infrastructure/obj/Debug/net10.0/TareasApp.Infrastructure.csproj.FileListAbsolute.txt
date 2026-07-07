@@ -13,3 +13,4 @@ C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\ne
 C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\refint\TareasApp.Infrastructure.dll
 C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.pdb
 C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\ref\TareasApp.Infrastructure.dll
+C:\Users\scarl\OneDrive\Desktop\C#\TestApp\TareasApp.Infrastructure\obj\Debug\net10.0\TareasApp.Infrastructure.sourcelink.json
