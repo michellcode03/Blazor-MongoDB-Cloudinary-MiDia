@@ -40,10 +40,10 @@ Esta arquitectura permite mantener una clara separación de responsabilidades, f
 
 ## Capturas
 
-![Pagina](assets/imagen12.png)
-![Pagina](assets/imagen13.png)
-![Pagina](assets/imagen14.png)
-![Pagina](assets/imagen15.png)
+![Pagina](assets/imagen12.PNG)
+![Pagina](assets/imagen13.PNG)
+![Pagina](assets/imagen14.PNG)
+![Pagina](assets/imagen15.PNG)
 
 ## Autor
 
